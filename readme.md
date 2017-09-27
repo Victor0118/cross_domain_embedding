@@ -12,14 +12,14 @@ Then:
 
 Sample:
 
-'''
+```
 ./cre -train estweet.txt -model vec_enwik9.bin -similarity sim.txt -output estweet_enwik9_10.bin -size 50 -window 5 -binary 1 -lambda 10 -threads 2
-'''
+```
 
 
 Please cite the following if you refer to our paper:
 
-'''
+```
 @InProceedings{yang-lu-zheng:2017:EMNLP2017,
   author    = {Yang, Wei  and  Lu, Wei  and  Zheng, Vincent},
   title     = {A Simple Regularization-based Algorithm for Learning Cross-Domain Word Embeddings},
@@ -40,4 +40,4 @@ Please cite the following if you refer to our paper:
 	down-stream NLP tasks.},
   url       = {https://www.aclweb.org/anthology/D17-1311}
 }
-'''
+```
