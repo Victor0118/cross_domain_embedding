@@ -4,16 +4,16 @@ To run the cre.c, you need to compile it using any C compiler first.
 
 Then:
 
-1). learn word embeddings from source domain using word2vec. A binary file will be generated.
+1). Learn word embeddings from source domain using word2vec toolkit (https://code.google.com/archive/p/word2vec/). Add -bin argument to generate binary output format.
 
-2). generate a similarity score file. One line per word in '$word$ $score$' format. The word should appear in both the source and the target domain. The score must be a positive real number.
+2). Generate a similarity score file. One line per word in '$word$ $score$' format. The word should appear in both the source and the target domain. The score must be a positive real number. The score file in the paper is generated through word frequency from corpus of two domains.
 
-3). run the cre program. Note that the size parameter (dimension of embeddings) should match the dimension of the embeddings from 1).
+3). Run the cre program. Note that the size parameter (dimension of embeddings) should match the dimension of the embeddings from step 1).
 
 Sample:
 
 ```
-./cre -train estweet.txt -model vec_enwik9.bin -similarity sim.txt -output estweet_enwik9_10.bin -size 50 -window 5 -binary 1 -lambda 10 -threads 2
+./cre -train <source_corpus_file.txt> -model <binary_embedding.bin> -similarity <similarity_score.txt> -output <output_name.bin> -size 50 -window 5 -binary 1 -lambda 10 -threads 20
 ```
 
 
@@ -32,3 +32,5 @@ Please cite the following if you refer to our paper:
   url       = {https://www.aclweb.org/anthology/D17-1311}
 }
 ```
+
+Contact w85yang@uwaterloo.ca if you have further question on the code.
