@@ -13,11 +13,11 @@ Then:
 Sample:
 
 ```
-./cre -train <source_corpus_file.txt> -model <binary_embedding.bin> -similarity <similarity_score.txt> -output <output_name.bin> -size 50 -window 5 -binary 1 -lambda 10 -threads 20
+./cre -train <target_corpus_file.txt> -model <binary_embedding.bin> -similarity <similarity_score.txt> -output <output_name.bin> -size 50 -window 5 -binary 1 -lambda 10 -threads 20
 ```
 
 
-Please cite the following if you refer to our paper:
+Please cite the following paper:
 
 ```
 @InProceedings{yang-lu-zheng:2017:EMNLP2017,
