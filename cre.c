@@ -22,7 +22,6 @@ struct vocab_word {
 char train_file[MAX_STRING], output_file[MAX_STRING],model_file[MAX_STRING];
 char save_vocab_file[MAX_STRING], read_vocab_file[MAX_STRING];
 struct vocab_word *vocab;
-struct vocab_word *vocab_2;
 
 int binary = 0, debug_mode = 2, window = 5, min_count = 5, num_threads = 12, min_reduce = 1;
 int *vocab_hash;
@@ -118,8 +117,6 @@ int ReadModel(){
   }
   fscanf(f, "%lld", &words);
   fscanf(f, "%lld", &size);
-  vocab_2 = (struct vocab_word *)calloc(vocab_max_size, sizeof(struct vocab_word));
-  // vocab_2 = (char *)malloc((long long)words * max_w * sizeof(char));
   M = (float *)malloc((long long)words * (long long)size * sizeof(float));
 
   if (M == NULL) {
@@ -133,8 +130,6 @@ int ReadModel(){
     fscanf(f, "%s%c", word, &ch);
     unsigned int length = strlen(word) + 1;
     if (length > MAX_STRING) length = MAX_STRING;
-    vocab_2[b].word = (char *)calloc(length, sizeof(char));
-    strcpy(vocab_2[b].word, word);
 
     temp = SearchVocab(word);
     if (temp != -1) {
